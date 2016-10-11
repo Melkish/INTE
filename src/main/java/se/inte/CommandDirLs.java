@@ -1,14 +1,16 @@
 package se.inte;
 
+import java.io.File;
+
 public class CommandDirLs {
 
-    private MyFile file;
+    private File file;
 
-    public CommandDirLs(MyFile file){
+    public CommandDirLs(File file){
         this.file = file;
     }
 
-    public MyFile getFile(){
+    public File getFile(){
         return this.file;
     }
 }

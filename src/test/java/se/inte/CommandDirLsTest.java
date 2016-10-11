@@ -1,12 +1,14 @@
 package se.inte;
 
-import org.junit.Test;
+import org.junit.*;
 
-import static org.junit.Assert.assertEquals;
+import java.io.File;
+
+import static org.junit.Assert.*;
 
 public class CommandDirLsTest {
 
-    private static MyFile file = new MyFile();
+    private static File file = new File("pathname");
 
     @Test
     public void getFileTest() {
