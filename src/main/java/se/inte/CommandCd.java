@@ -13,7 +13,9 @@ public class CommandCd extends Command{
         if(commandString.equalsIgnoreCase("cd")){
             terminal.getHomeFolder();
         } else if (commandString.equalsIgnoreCase("cd ..")){
-            terminal.setCurrentFolder(currentFolder.getParentFolder());
+            if(currentFolder.getParentFolder() != null){
+                terminal.setCurrentFolder(currentFolder.getParentFolder());
+            }
         } else if (commandString.startsWith("cd ")){
             String dirName = getDirName(commandString);
             for (Folder f : currentFolder.listSubFolders()){

@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class CommandCdTest {
 
-    private Folder currentFolder;
+    private Folder topFolder;
     private Folder subFolder1;
     private Folder subFolder2;
     private Folder subFolder3;
@@ -15,34 +15,13 @@ public class CommandCdTest {
 
     @Before
     public void before(){
-        currentFolder = new MockedFolder("My_folder", null);
-        subFolder1 = currentFolder.createSubFolder("documents");
-        subFolder2 = subFolder1.createSubFolder("images");
-        subFolder3 = subFolder2.createSubFolder("downloads");
+        topFolder = new MockedFolder("TopFolder", null);
+        subFolder1 = topFolder.createSubFolder("subfolder1");
+        subFolder2 = subFolder1.createSubFolder("subfolder2");
+        subFolder3 = subFolder2.createSubFolder("subfolder3");
         terminal = new Terminal();
 
     }
-
-    /*
-    @Test
-    public void homeFolderTest(){
-        CommandCd commandCd = new CommandCd();
-        assertEquals(currentFolder, commandCd.getHomeFolder());
-    }
-
-    @Test
-    public void parentFolderTest(){
-        CommandCd commandCd = new CommandCd();
-        assertEquals(currentFolder, commandCd.getParentFolder());
-    }
-
-    @Test
-    public void subFolderTest(){
-        CommandCd commandCd = new CommandCd();
-        assertEquals(subFolder1, commandCd.getSubFolderByName("documents"));
-    }
-    */
-
 
     @Test
     public void commandCdTest(){
@@ -50,7 +29,7 @@ public class CommandCdTest {
         terminal.setCurrentFolder(subFolder3);
         terminal.theCommandLoop();
         Folder testFolder = terminal.getCurrentFolder();
-        assertEquals(currentFolder, testFolder);
+        assertEquals(topFolder, testFolder);
     }
 
     @Test public void commandCdDotDotTest(){
@@ -61,8 +40,16 @@ public class CommandCdTest {
         assertEquals(subFolder2, testFolder);
     }
 
+    @Test public void commandCdDotDotFromHomeTest(){
+        terminal.setCommandString("cd ..");
+        terminal.setCurrentFolder(topFolder);
+        terminal.theCommandLoop();
+        Folder testFolder = terminal.getCurrentFolder();
+        assertEquals(topFolder, testFolder);
+    }
+
     @Test public void commandCdDirNameTest(){
-        terminal.setCommandString("cd images");
+        terminal.setCommandString("cd subfolder2");
         terminal.setCurrentFolder(subFolder1);
         terminal.theCommandLoop();
         Folder testFolder = terminal.getCurrentFolder();
