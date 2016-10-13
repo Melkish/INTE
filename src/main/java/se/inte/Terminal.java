@@ -15,10 +15,13 @@ public class Terminal {
     }
 
     public void theCommandLoop() {
-        while(!commandString.equalsIgnoreCase("quit")) {
+        //while(!commandString.equalsIgnoreCase("quit")) {
+        int i = 1;
+        while(i != 0){
+            i = i - 1;
             Command command = new Command();
-            command.execute(this);
-            command.executeCommand(this);
+            Command subCommand = command.executeCommand(this);
+            subCommand.execute(this);
         }
     }
 

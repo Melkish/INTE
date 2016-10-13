@@ -12,8 +12,22 @@ public class CommandCd extends Command{
 
         if(commandString.equalsIgnoreCase("cd")){
             terminal.getHomeFolder();
+        } else if (commandString.equalsIgnoreCase("cd ..")){
+            terminal.setCurrentFolder(currentFolder.getParentFolder());
+        } else if (commandString.startsWith("cd ")){
+            String dirName = getDirName(commandString);
+            for (Folder f : currentFolder.listSubFolders()){
+                if (f.getFolderName().equalsIgnoreCase(dirName)){
+                    terminal.setCurrentFolder(f);
+                    return;
+                }
+            }
+            System.out.println("No directory with name " + dirName);
         }
+    }
 
+    private String getDirName(String fullString){
+        return fullString.substring(3);
     }
 
     public Folder getHomeFolder(){

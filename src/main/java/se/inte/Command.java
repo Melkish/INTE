@@ -15,7 +15,7 @@ public class Command {
     }
 
     public void execute(Terminal terminal){
-        System.out.print("poop");
+        System.out.println("poop");
 
     }
 
