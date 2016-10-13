@@ -11,8 +11,13 @@ public class Command {
 
         if (commandString.startsWith("cd")) {
             return new CommandCd();
+        } else if (commandString.startsWith("dir") || commandString.startsWith("ls")) {
+            return new CommandDirLs();
+
         } else return null;
     }
+
+
 
     public void execute(Terminal terminal){
         System.out.println("poop");

@@ -4,6 +4,7 @@ public class Terminal {
 
     String commandString;
     Folder currentFolder;
+    Command currentCommand;
 
     public Terminal() {
 
@@ -22,6 +23,7 @@ public class Terminal {
             Command command = new Command();
             Command subCommand = command.executeCommand(this);
             subCommand.execute(this);
+            currentCommand = subCommand;
         }
     }
 
@@ -38,6 +40,10 @@ public class Terminal {
 
     public String getCommandString(){
         return commandString;
+    }
+
+    public Command getCurrentCommand(){
+        return currentCommand;
     }
 
     public Terminal getTerminal(){

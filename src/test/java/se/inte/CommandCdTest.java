@@ -12,8 +12,6 @@ public class CommandCdTest {
     private Folder subFolder2;
     private Folder subFolder3;
     private Terminal terminal;
-    private String commandString = null;
-    private Command command;
 
     @Before
     public void before(){
@@ -22,10 +20,10 @@ public class CommandCdTest {
         subFolder2 = subFolder1.createSubFolder("images");
         subFolder3 = subFolder2.createSubFolder("downloads");
         terminal = new Terminal();
-        command = new Command();
 
     }
 
+    /*
     @Test
     public void homeFolderTest(){
         CommandCd commandCd = new CommandCd();
@@ -43,6 +41,8 @@ public class CommandCdTest {
         CommandCd commandCd = new CommandCd();
         assertEquals(subFolder1, commandCd.getSubFolderByName("documents"));
     }
+    */
+
 
     @Test
     public void commandCdTest(){
