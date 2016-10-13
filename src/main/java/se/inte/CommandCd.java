@@ -11,7 +11,7 @@ public class CommandCd extends Command{
         this.commandString = terminal.getCommandString();
 
         if(commandString.equalsIgnoreCase("cd")){
-            terminal.getHomeFolder();
+            terminal.setCurrentFolderToHomeFolder();
         } else if (commandString.equalsIgnoreCase("cd ..")){
             if(currentFolder.getParentFolder() != null){
                 terminal.setCurrentFolder(currentFolder.getParentFolder());

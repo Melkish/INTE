@@ -27,7 +27,7 @@ public class Terminal {
         }
     }
 
-    public Folder getHomeFolder(){
+    public Folder setCurrentFolderToHomeFolder(){
         while(currentFolder.getParentFolder()!=null){
             currentFolder = currentFolder.getParentFolder();
         }
