@@ -2,7 +2,7 @@ package se.inte;
 
 import java.util.List;
 
-public class CommandDirLs {
+public class CommandDirLs extends Command{
 
     private Folder currentFolder;
 

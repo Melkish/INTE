@@ -11,6 +11,9 @@ public class CommandCdTest {
     private Folder subFolder1;
     private Folder subFolder2;
     private Folder subFolder3;
+    private Terminal terminal;
+    private String commandString = null;
+    private Command command;
 
     @Before
     public void before(){
@@ -18,24 +21,36 @@ public class CommandCdTest {
         subFolder1 = currentFolder.createSubFolder("documents");
         subFolder2 = subFolder1.createSubFolder("images");
         subFolder3 = subFolder2.createSubFolder("downloads");
+        terminal = new Terminal();
+        command = new Command();
+
     }
 
     @Test
     public void homeFolderTest(){
-        CommandCd commandCd = new CommandCd(subFolder3);
+        CommandCd commandCd = new CommandCd();
         assertEquals(currentFolder, commandCd.getHomeFolder());
     }
 
     @Test
     public void parentFolderTest(){
-        CommandCd commandCd = new CommandCd(subFolder1);
+        CommandCd commandCd = new CommandCd();
         assertEquals(currentFolder, commandCd.getParentFolder());
     }
 
     @Test
     public void subFolderTest(){
-        CommandCd commandCd = new CommandCd(currentFolder);
+        CommandCd commandCd = new CommandCd();
         assertEquals(subFolder1, commandCd.getSubFolderByName("documents"));
+    }
+
+    @Test
+    public void commandCdTest(){
+        terminal.setCommandString("cd");
+        terminal.setCurrentFolder(subFolder3);
+        terminal.theCommandLoop();
+        Folder testFolder = terminal.getCurrentFolder();
+        assertEquals(currentFolder, testFolder);
     }
 
 }
