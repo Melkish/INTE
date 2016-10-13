@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2f9136e-fa8b-477a-9135-eb4a5d010513" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/inte/Command.java" afterPath="$PROJECT_DIR$/src/main/java/se/inte/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/inte/CommandCd.java" afterPath="$PROJECT_DIR$/src/main/java/se/inte/CommandCd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/inte/CommandDirLs.java" afterPath="$PROJECT_DIR$/src/main/java/se/inte/CommandDirLs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/se/inte/Terminal.java" afterPath="$PROJECT_DIR$/src/main/java/se/inte/Terminal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/se/inte/CommandCdTest.java" afterPath="$PROJECT_DIR$/src/test/java/se/inte/CommandCdTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/se/inte/CommandTest.java" afterPath="$PROJECT_DIR$/src/test/java/se/inte/CommandTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/se/inte/TerminalTest.java" afterPath="$PROJECT_DIR$/src/test/java/se/inte/TerminalTest.java" />
     </list>
     <ignored path="inte.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -796,7 +789,13 @@
       <option name="project" value="LOCAL" />
       <updated>1476265166718</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CommandCd some methods works, Command and Terminal classes created with testclasses. Worked on by Sanna Mira Maria Olivia and Emma">
+      <created>1476342074775</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1476342074775</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -840,6 +839,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -858,7 +858,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914772" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -881,7 +880,8 @@
     <MESSAGE value="Interface Folder created, Empty MockedFolder created, tests added, still failing because no implementation" />
     <MESSAGE value="MockedFolder funktionality created using TDD, test also created, all tests works. CommandDirLs works. Worked on by Sanna Mira Maria Olivia and Emma" />
     <MESSAGE value="CommandCd works, some empty classes created. Worked on by Sanna Mira Maria Olivia and Emma" />
-    <option name="LAST_COMMIT_MESSAGE" value="CommandCd works, some empty classes created. Worked on by Sanna Mira Maria Olivia and Emma" />
+    <MESSAGE value="CommandCd some methods works, Command and Terminal classes created with testclasses. Worked on by Sanna Mira Maria Olivia and Emma" />
+    <option name="LAST_COMMIT_MESSAGE" value="CommandCd some methods works, Command and Terminal classes created with testclasses. Worked on by Sanna Mira Maria Olivia and Emma" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
