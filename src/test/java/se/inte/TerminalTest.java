@@ -8,12 +8,12 @@ import static org.junit.Assert.*;
 public class TerminalTest {
 
     Terminal terminal;
-    Folder topFolder;
+    Folder homeFolder;
 
     @Before
     public void before(){
         terminal = new Terminal();
-        topFolder = new MockedFolder("topfolder", null);
+        homeFolder = new MockedFolder("topfolder", null);
     }
 
     @Test
@@ -29,8 +29,8 @@ public class TerminalTest {
 
     @Test
     public void currentFolderTest(){
-        terminal.setCurrentFolder(topFolder);
-        assertEquals(topFolder, terminal.getCurrentFolder());
+        terminal.setCurrentFolder(homeFolder);
+        assertEquals(homeFolder, terminal.getCurrentFolder());
     }
 
 

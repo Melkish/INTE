@@ -1,12 +1,21 @@
 package se.inte;
 
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.util.*;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class CommandMkDirTest {
+
+    private Folder homeFolder;
+    private Terminal terminal;
+
+    @Before
+    public void before(){
+        homeFolder = new MockedFolder("HomeFolder", null);
+        terminal = new Terminal();
+
+    }
 
 
 }

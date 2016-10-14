@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class CommandDirLsTest {
 
-    private Folder topFolder;
+    private Folder homeFolder;
     private Folder subFolder1;
     private Folder subFolder2;
     private Folder subFolder3;
@@ -16,17 +16,17 @@ public class CommandDirLsTest {
 
     @Before
     public void before(){
-        topFolder = new MockedFolder("topfolder", null);
-        subFolder1 = topFolder.createSubFolder("subfolder1");
-        subFolder2 = topFolder.createSubFolder("subfolder2");
-        subFolder3 = topFolder.createSubFolder("subfolder3");
+        homeFolder = new MockedFolder("topfolder", null);
+        subFolder1 = homeFolder.createSubFolder("subfolder1");
+        subFolder2 = homeFolder.createSubFolder("subfolder2");
+        subFolder3 = homeFolder.createSubFolder("subfolder3");
         terminal = new Terminal();
     }
 
     @Test
     public void commandDirPrintsSubFoldersTest(){
         terminal.setCommandString("dir");
-        terminal.setCurrentFolder(topFolder);
+        terminal.setCurrentFolder(homeFolder);
         terminal.theCommandLoop();
         Command command = terminal.getCurrentCommand();
         ArrayList<Folder> subFolders = ((CommandDirLs) command).getPrintedSubFolderList();
@@ -36,7 +36,7 @@ public class CommandDirLsTest {
     @Test
     public void commandLsPrintsSubFoldersTest(){
         terminal.setCommandString("ls");
-        terminal.setCurrentFolder(topFolder);
+        terminal.setCurrentFolder(homeFolder);
         terminal.theCommandLoop();
         Command command = terminal.getCurrentCommand();
         ArrayList<Folder> subFolders = ((CommandDirLs) command).getPrintedSubFolderList();

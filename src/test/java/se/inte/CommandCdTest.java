@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class CommandCdTest {
 
-    private Folder topFolder;
+    private Folder homeFolder;
     private Folder subFolder1;
     private Folder subFolder2;
     private Folder subFolder3;
@@ -15,8 +15,8 @@ public class CommandCdTest {
 
     @Before
     public void before(){
-        topFolder = new MockedFolder("TopFolder", null);
-        subFolder1 = topFolder.createSubFolder("subfolder1");
+        homeFolder = new MockedFolder("TopFolder", null);
+        subFolder1 = homeFolder.createSubFolder("subfolder1");
         subFolder2 = subFolder1.createSubFolder("subfolder2");
         subFolder3 = subFolder2.createSubFolder("subfolder3");
         terminal = new Terminal();
@@ -29,7 +29,7 @@ public class CommandCdTest {
         terminal.setCurrentFolder(subFolder3);
         terminal.theCommandLoop();
         Folder testFolder = terminal.getCurrentFolder();
-        assertEquals(topFolder, testFolder);
+        assertEquals(homeFolder, testFolder);
     }
 
     @Test public void commandCdDotDotTest(){
@@ -42,10 +42,10 @@ public class CommandCdTest {
 
     @Test public void commandCdDotDotFromHomeTest(){
         terminal.setCommandString("cd ..");
-        terminal.setCurrentFolder(topFolder);
+        terminal.setCurrentFolder(homeFolder);
         terminal.theCommandLoop();
         Folder testFolder = terminal.getCurrentFolder();
-        assertEquals(topFolder, testFolder);
+        assertEquals(homeFolder, testFolder);
     }
 
     @Test public void commandCdDirNameTest(){

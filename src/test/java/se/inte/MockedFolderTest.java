@@ -12,12 +12,12 @@ public class MockedFolderTest {
 
     @Before
     public void before(){
-        myFolder = new MockedFolder("topfolder", null);
+        myFolder = new MockedFolder("homeFolder", null);
     }
 
     @Test
     public void folderNameTest(){
-        assertEquals("topfolder", myFolder.getFolderName());
+        assertEquals("homeFolder", myFolder.getFolderName());
     }
 
     @Test
