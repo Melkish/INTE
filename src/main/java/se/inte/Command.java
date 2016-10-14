@@ -10,15 +10,13 @@ public class Command {
             return new CommandCd();
         } else if (commandString.startsWith("dir") || commandString.startsWith("ls")) {
             return new CommandDirLs();
-
-        } else return null;
+        } else if (commandString.startsWith("mkdir")){
+            return new CommandMkDir();
+        } else
+            return new CommandUnknown();
     }
-
-
 
     public void execute(Terminal terminal){
         System.out.println("poop");
-
     }
-
 }
