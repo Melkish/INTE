@@ -9,7 +9,7 @@ public class CommandCdTest {
 
     private Folder homeFolder;
     private Folder subFolder1;
-    private Folder subFolder2;
+    private Folder subFolder2; 
     private Folder subFolder3;
     private Terminal terminal;
 
