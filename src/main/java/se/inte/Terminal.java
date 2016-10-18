@@ -1,13 +1,17 @@
 package se.inte;
 
+import java.util.ArrayList;
+
 public class Terminal {
 
     String commandString;
     Folder currentFolder;
     Command currentCommand;
+    CommandHistoryDoskey commandHistory;
+
 
     public Terminal() {
-
+        commandHistory = new CommandHistoryDoskey();
     }
 
     public static void main (String[] args){
@@ -23,8 +27,9 @@ public class Terminal {
             Command command = new Command();
             Command subCommand = command.executeCommand(this);
             subCommand.execute(this);
+            commandHistory.saveCommandToHistory (commandString);
+            saveCommandToHistory(commandString);
             currentCommand = subCommand;
-
         }
     }
 
@@ -34,6 +39,18 @@ public class Terminal {
         }
         return currentFolder;
     }
+
+
+
+    public void saveCommandToHistory (String commandString){
+        commandHistory.saveCommandToHistory (commandString);
+    }
+
+    public ArrayList getCommandHistory(){
+        return commandHistory.getCommandHistory ();
+    }
+
+
 
     public void setCommandString(String commandString){
         this.commandString = commandString;

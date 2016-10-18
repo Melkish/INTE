@@ -6,6 +6,7 @@ public class Command {
         System.out.print("Command> ");
         String commandString = terminal.getCommandString();
 
+
         if (commandString.startsWith("cd")) {
             return new CommandCd();
         } else if (commandString.startsWith("dir") || commandString.startsWith("ls")) {
@@ -20,6 +21,8 @@ public class Command {
             return new CommandCpXcopy();
         }else if(commandString.startsWith("rmdir")){
             return new CommandRmdir();
+        } else if (commandString.startsWith("doskey") || commandString.startsWith("history")){
+            return new CommandHistoryDoskey();
         } else
             return new CommandUnknown();
     }
