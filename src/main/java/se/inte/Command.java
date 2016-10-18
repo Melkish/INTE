@@ -18,6 +18,8 @@ public class Command {
             return new CommandExit();
         } else if(commandString.startsWith("cp -r") || commandString.startsWith("xcopy")){
             return new CommandCpXcopy();
+        }else if(commandString.startsWith("rmdir")){
+            return new CommandRmdir();
         } else
             return new CommandUnknown();
     }
