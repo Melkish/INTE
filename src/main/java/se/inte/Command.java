@@ -16,10 +16,12 @@ public class Command {
             return new CommandPwdChdir();
         } else if (commandString.equalsIgnoreCase("exit")){
             return new CommandExit();
-        } else if(commandString.startsWith("cp -r") || commandString.startsWith("xcopy")){
+        } else if (commandString.startsWith("cp -r") || commandString.startsWith("xcopy")){
             return new CommandCpXcopy();
-        }else if(commandString.startsWith("rmdir")){
+        } else if (commandString.startsWith("rmdir")){
             return new CommandRmdir();
+        } else if (commandString.startsWith("mv") || commandString.startsWith("ren")) {
+            return new CommandMvRen();
         } else
             return new CommandUnknown();
     }
