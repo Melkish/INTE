@@ -35,6 +35,7 @@ public class CommandCpXcopyTest {
     }
 
     //TODO create test to check if the first folders name is also changed
+    
 
 
 
