@@ -29,6 +29,7 @@ public class CommandDirLsTest {
         terminal.setCurrentFolder(homeFolder);
         terminal.theCommandLoop();
         Command command = terminal.getCurrentCommand();
+
         ArrayList<Folder> subFolders = ((CommandDirLs) command).getPrintedSubFolderList();
         assertTrue(subFolders.contains(subFolder1) && subFolders.contains(subFolder2) && subFolders.contains(subFolder3));
     }

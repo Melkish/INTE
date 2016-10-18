@@ -4,7 +4,7 @@ public class Terminal {
 
     String commandString;
     Folder currentFolder;
-    Command currentCommand;
+    Command command;
 
     public Terminal() {
 
@@ -16,14 +16,14 @@ public class Terminal {
     }
 
     public void theCommandLoop() {
-        //while(!commandString.equalsIgnoreCase("quit")) {
+        //while(!(command instanceof CommandExit)) {
         int i = 1;
         while(i != 0){
             i = i - 1;
             Command command = new Command();
-            Command subCommand = command.executeCommand(this);
-            subCommand.execute(this);
-            currentCommand = subCommand;
+            command = command.executeCommand(this);
+            command.execute(this);
+
         }
     }
 
@@ -43,7 +43,7 @@ public class Terminal {
     }
 
     public Command getCurrentCommand(){
-        return currentCommand;
+        return command;
     }
 
     public Terminal getTerminal(){

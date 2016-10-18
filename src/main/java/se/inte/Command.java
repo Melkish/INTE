@@ -12,6 +12,8 @@ public class Command {
             return new CommandDirLs();
         } else if (commandString.startsWith("mkdir")){
             return new CommandMkDir();
+        } else if (commandString.equalsIgnoreCase("exit")){
+            return new CommandExit();
         } else
             return new CommandUnknown();
     }
