@@ -12,6 +12,8 @@ public class Command {
             return new CommandDirLs();
         } else if (commandString.startsWith("mkdir")){
             return new CommandMkDir();
+        } else if(commandString.startsWith("chdir") || commandString.startsWith("pwd")){
+            return new CommandPwdChdir();
         } else if (commandString.equalsIgnoreCase("exit")){
             return new CommandExit();
         } else
