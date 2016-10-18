@@ -10,7 +10,7 @@ import java.util.Collections;
 public class CommandPwdChdir extends Command {
 
     private Folder currentFolder;
-    private ArrayList<Folder> folders = new ArrayList<>();
+    private ArrayList<Folder> folderPath = new ArrayList<>();
     private String path;
 
     @Override
@@ -18,14 +18,20 @@ public class CommandPwdChdir extends Command {
         this.currentFolder = terminal.currentFolder;
 
         while (currentFolder.getParentFolder() != null){
-            folders.add(currentFolder);
+            folderPath.add(currentFolder);
             currentFolder = currentFolder.getParentFolder();
         }
-        folders.add(currentFolder);
-        Collections.reverse(folders);
+        folderPath.add(currentFolder);
+        Collections.reverse(folderPath);
         path = "";
-        for (Folder f : folders){
-            path = path + "/" + f.getFolderName();
+        if (terminal.getCommandString().startsWith("chdir")){
+            for (Folder f : folderPath){
+                path = path + "\\" + f.getFolderName();
+            }
+        } else if (terminal.getCommandString().startsWith("pwd")) {
+            for (Folder f : folderPath) {
+                path = path + "/" + f.getFolderName();
+            }
         }
     }
 

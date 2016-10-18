@@ -31,7 +31,7 @@ public class CommandPwdChdirTest {
         terminal.theCommandLoop();
         Command command = terminal.getCurrentCommand();
         String correctPath = ((CommandPwdChdir) command).getPath();
-        String path = "/homeFolder/subFolder1/subFolder2";
+        String path = "\\homeFolder\\subFolder1\\subFolder2";
         assertEquals(path, correctPath);
     }
 
