@@ -19,6 +19,11 @@ public class MockedFolder implements Folder {
         subFolderList.add(subFolder);
         return subFolder;
     }
+    public Folder copyFolder(String folderName){
+        Folder copyFolder = new MockedFolder(folderName, this);
+        subFolderList.add(copyFolder);
+        return copyFolder;
+    }
 
     @Override
     public ArrayList<Folder> listSubFolders() {
@@ -33,5 +38,10 @@ public class MockedFolder implements Folder {
     @Override
     public Folder getParentFolder(){
         return parentFolder;
+    }
+
+    @Override
+    public void setFolderName(String newName){
+        this.folderName = newName;
     }
 }

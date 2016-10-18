@@ -11,5 +11,5 @@ public interface Folder {
     List<Folder> listSubFolders();
     String getFolderName();
     Folder getParentFolder();
-
+    void setFolderName(String newName);
 }

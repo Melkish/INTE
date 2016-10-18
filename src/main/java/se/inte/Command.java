@@ -12,8 +12,12 @@ public class Command {
             return new CommandDirLs();
         } else if (commandString.startsWith("mkdir")){
             return new CommandMkDir();
+        }else if(commandString.startsWith("cp -r") || commandString.startsWith("xcopy")){
+            return new CommandCpXcopy();
         } else
             return new CommandUnknown();
+
+
     }
 
     public void execute(Terminal terminal){
