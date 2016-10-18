@@ -4,7 +4,7 @@ public class Terminal {
 
     String commandString;
     Folder currentFolder;
-    Command command;
+    Command currentCommand;
 
     public Terminal() {
 
@@ -21,8 +21,9 @@ public class Terminal {
         while(i != 0){
             i = i - 1;
             Command command = new Command();
-            command = command.executeCommand(this);
-            command.execute(this);
+            Command subCommand = command.executeCommand(this);
+            subCommand.execute(this);
+            currentCommand = subCommand;
 
         }
     }
@@ -43,7 +44,7 @@ public class Terminal {
     }
 
     public Command getCurrentCommand(){
-        return command;
+        return currentCommand;
     }
 
     public Terminal getTerminal(){

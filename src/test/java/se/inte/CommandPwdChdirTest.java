@@ -34,7 +34,7 @@ public class CommandPwdChdirTest {
         String path = "/homeFolder/subFolder1/subFolder2";
         assertEquals(path, correctPath);
     }
- 
+
     @Test
     public void PwdTest(){
         terminal.setCommandString("pwd");
@@ -43,6 +43,17 @@ public class CommandPwdChdirTest {
         Command command = terminal.getCurrentCommand();
         String correctPath = ((CommandPwdChdir) command).getPath();
         String path = "/homeFolder/subFolder1";
+        assertEquals(path, correctPath);
+    }
+
+    @Test
+    public void NoParentFoldersTest(){
+        terminal.setCommandString("pwd");
+        terminal.setCurrentFolder(homeFolder);
+        terminal.theCommandLoop();
+        Command command = terminal.getCurrentCommand();
+        String correctPath = ((CommandPwdChdir) command).getPath();
+        String path = "/homeFolder";
         assertEquals(path, correctPath);
     }
 }
