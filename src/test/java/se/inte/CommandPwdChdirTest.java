@@ -34,7 +34,7 @@ public class CommandPwdChdirTest {
         String path = "/homeFolder/subFolder1/subFolder2";
         assertEquals(path, correctPath);
     }
-
+ 
     @Test
     public void PwdTest(){
         terminal.setCommandString("pwd");
