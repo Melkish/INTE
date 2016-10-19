@@ -26,12 +26,14 @@ public class Terminal {
             Command subCommand = command.executeCommand(this);
             subCommand.execute(this);
             currentCommand = subCommand;
-            commandHistory.add(commandString);
         }
 
     }
     public ArrayList<String> getCommandHistory() {
         return commandHistory;
+    }
+    public void clearHistory (){
+        commandHistory.clear();
     }
 
     public Folder setCurrentFolderToHomeFolder(){
@@ -44,6 +46,7 @@ public class Terminal {
 
     public void setCommandString(String commandString){
         this.commandString = commandString;
+        commandHistory.add(commandString);
     }
 
     public String getCommandString(){

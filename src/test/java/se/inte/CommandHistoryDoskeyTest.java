@@ -19,16 +19,38 @@ public class CommandHistoryDoskeyTest {
     public void before (){
         terminal = new Terminal ();
         testCommandHistory = new ArrayList<>();
-        homeFolder = new MockedFolder("HomeFolder", null);
-        cmdString1 = "mkdir HomeFolder";
-        terminal.setCurrentFolder(homeFolder);
     }
 
     @Test
     public void getCommandHistory (){
+        homeFolder = new MockedFolder("HomeFolder", null);
+        cmdString1 = "mkdir HomeFolder";
+        terminal.setCurrentFolder(homeFolder);
         terminal.setCommandString(cmdString1);
         testCommandHistory.add(cmdString1);
         terminal.theCommandLoop();
+        assertEquals(testCommandHistory, terminal.getCommandHistory());
+
+    }
+    @Test
+    public void doskey (){
+        cmdString1 = "doskey";
+        terminal.setCommandString(cmdString1);
+        Command testCommand = new CommandHistoryDoskey();
+        terminal.theCommandLoop();
+        assertEquals(testCommand.getClass(), terminal.getCurrentCommand().getClass());
+    }
+
+    @Test
+    public void listIsEmpty (){
+        homeFolder = new MockedFolder("HomeFolder", null);
+        cmdString1 = "mkdir HomeFolder";
+        terminal.setCurrentFolder(homeFolder);
+        terminal.setCommandString(cmdString1);
+        testCommandHistory.add(cmdString1);
+        testCommandHistory.clear();
+        terminal.theCommandLoop();
+        terminal.clearHistory ();
         assertEquals(testCommandHistory, terminal.getCommandHistory());
 
     }
