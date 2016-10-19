@@ -7,37 +7,25 @@ import java.util.ArrayList;
  */
 public class CommandHistoryDoskey extends Command {
 
-    private String commandString;
     private Terminal terminal;
-    private ArrayList<String> commandHistory = new ArrayList<>();
-
+    private boolean hasPrinted = false;
 
     public void execute (Terminal terminal) {
         this.terminal = terminal;
-        this.commandString = terminal.getCommandString();
+        printHistory(terminal.getCommandHistory());
 
     }
 
-    public void printHistory (){
-            for (int i = 0; i < terminal.getCommandHistory().size(); i++ ){
-                System.out.println(terminal.getCommandHistory().get(i));
+
+    public void printHistory (ArrayList listToPrint) {
+        if (!listToPrint.isEmpty()) {
+            for (int i = 0; i < listToPrint.size(); i++) {
+                System.out.println(listToPrint.get(i) + "command> ");
+                hasPrinted = true;
+            }
+        }else {
+            System.out.print ("History is empty");
         }
     }
-
-    public void saveCommandToHistory (String commandString){
-        commandHistory.add (commandString);
-    }
-
-    public ArrayList getCommandHistory(){
-
-        if (commandHistory.isEmpty()){
-            return null;
-        }
-        return commandHistory;
-    }
-
-
-
-
 
 }

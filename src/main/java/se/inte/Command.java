@@ -1,11 +1,9 @@
 package se.inte;
 
 public class Command {
-
     public Command executeCommand(Terminal terminal) {
         System.out.print("Command> ");
         String commandString = terminal.getCommandString();
-
 
         if (commandString.startsWith("cd")) {
             return new CommandCd();
