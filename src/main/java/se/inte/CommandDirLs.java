@@ -9,11 +9,17 @@ public class CommandDirLs extends Command{
 
     public void execute(Terminal terminal){
         this.currentFolder = terminal.getCurrentFolder();
-        printSubFolders();
 
+        if (terminal.getCommandString().startsWith("ls -a") || terminal.getCommandString().startsWith("dir /aa")){
+
+        } else if (terminal.getCommandString().startsWith("ls -l") || terminal.getCommandString().startsWith("dir /v") || terminal.getCommandString().startsWith("dir /os")){
+
+        } else {
+            printContentNormal();
+        }
     }
 
-    public void printSubFolders() {
+    public void printContentNormal() {
         for(Folder f : currentFolder.listSubFolders()){
             System.out.println(f.getFolderName());
             printedSubFolders.add(f);

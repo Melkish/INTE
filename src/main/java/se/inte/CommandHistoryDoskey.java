@@ -7,12 +7,8 @@ import java.util.ArrayList;
  */
 public class CommandHistoryDoskey extends Command {
 
-    private Terminal terminal;
-
     public void execute (Terminal terminal) {
-        this.terminal = terminal;
         printHistory(terminal.getCommandHistory());
-
     }
 
 
@@ -21,8 +17,6 @@ public class CommandHistoryDoskey extends Command {
             for (int i = 0; i < listToPrint.size(); i++) {
                 System.out.println(listToPrint.get(i) + "command> ");
             }
-        }else {
-            System.out.print ("History is empty");
         }
     }
 
