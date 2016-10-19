@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Miran on 2016-10-18.
  */
-public class CommandHistoryDoskeyTest {
+public class CommandHistoryDoskeyhTest {
 
     private ArrayList <String> testCommandHistory;
     private String cmdString1;
@@ -33,8 +33,8 @@ public class CommandHistoryDoskeyTest {
 
     }
     @Test
-    public void doskey (){
-        cmdString1 = "doskey";
+    public void doskeyh (){
+        cmdString1 = "doskey /h";
         terminal.setCommandString(cmdString1);
         Command testCommand = new CommandHistoryDoskey();
         terminal.theCommandLoop();

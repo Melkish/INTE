@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by Miran on 2016-10-18.
  */
-public class CommandHistoryDoskey extends Command {
+public class CommandHistoryDoskeyh extends Command {
 
     private Terminal terminal;
 
