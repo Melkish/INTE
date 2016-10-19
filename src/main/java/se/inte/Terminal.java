@@ -1,15 +1,17 @@
 package se.inte;
 
+import java.util.ArrayList;
+
 public class Terminal {
 
     String commandString;
     Folder currentFolder;
     Command currentCommand;
+    ArrayList<String> commandHistory  = new ArrayList<>();
+
 
     public Terminal() {
-
     }
-
     public static void main (String[] args){
         Terminal terminal = new Terminal();
         terminal.theCommandLoop();
@@ -24,8 +26,12 @@ public class Terminal {
             Command subCommand = command.executeCommand(this);
             subCommand.execute(this);
             currentCommand = subCommand;
-
+            commandHistory.add(commandString);
         }
+
+    }
+    public ArrayList<String> getCommandHistory() {
+        return commandHistory;
     }
 
     public Folder setCurrentFolderToHomeFolder(){
@@ -34,6 +40,7 @@ public class Terminal {
         }
         return currentFolder;
     }
+
 
     public void setCommandString(String commandString){
         this.commandString = commandString;

@@ -1,7 +1,6 @@
 package se.inte;
 
 public class Command {
-
     public Command executeCommand(Terminal terminal) {
         System.out.print("Command> ");
         String commandString = terminal.getCommandString();
@@ -20,6 +19,8 @@ public class Command {
             return new CommandCpXcopy();
         } else if (commandString.startsWith("rmdir")){
             return new CommandRmdir();
+        } else if (commandString.startsWith("doskey") || commandString.startsWith("history")){
+            return new CommandHistoryDoskey();
         } else if (commandString.startsWith("mv") || commandString.startsWith("ren")) {
             return new CommandMvRen();
         } else
