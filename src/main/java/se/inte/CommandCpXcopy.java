@@ -32,6 +32,9 @@ public class CommandCpXcopy extends Command {
             System.out.print("The folder " + folderToBeCopiedString + " does not exist.");
         }
     }
+    public String getOriginalFolderName () {
+        return folderToBeCopiedString;
+    }
 
     public Folder getCopiedFolder(){
         return copiedFolder;

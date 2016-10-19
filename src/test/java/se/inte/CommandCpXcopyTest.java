@@ -34,17 +34,15 @@ public class CommandCpXcopyTest {
         assertEquals("newFolder", newFolder.getFolderName());
     }
 
+    @Test
+    public void checkFirstFolderName (){
+        terminal.setCommandString("cp -r subfolder1 newFolder");
+        terminal.setCurrentFolder(homeFolder);
+        terminal.theCommandLoop();
+        Command command = terminal.getCurrentCommand();
+        assertEquals("subfolder1", ((CommandCpXcopy) command).getOriginalFolderName() );
+
+    }
     //TODO create test to check if the first folders name is also changed
-    
-
-
-
-
-
-
-
-
-
-
 
 }
