@@ -7,6 +7,7 @@ public class MockedFolder implements Folder {
     private String folderName;
     private ArrayList<Folder> subFolderList = new ArrayList<>();
     private Folder parentFolder;
+    private ArrayList<File> fileList = new ArrayList<>();
 
     public MockedFolder(String folderName, Folder parentFolder) {
         this.folderName = folderName;
@@ -43,5 +44,12 @@ public class MockedFolder implements Folder {
     @Override
     public void setFolderName(String newName){
         this.folderName = newName;
+    }
+
+    @Override
+    public File createFile(String fileName, boolean hidden, int size){
+        File file = new MockedFile(fileName, this, hidden, size);
+        fileList.add(file);
+        return file;
     }
 }
