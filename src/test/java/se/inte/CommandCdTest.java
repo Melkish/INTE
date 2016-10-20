@@ -15,7 +15,7 @@ public class CommandCdTest {
 
     @Before
     public void before(){
-        homeFolder = new MockedFolder("TopFolder", null) ;
+        homeFolder = new MockedFolder("TopFolder", null);
         subFolder1 = homeFolder.createSubFolder("subfolder1");
         subFolder2 = subFolder1.createSubFolder("subfolder2");
         subFolder3 = subFolder2.createSubFolder("subfolder3");
