@@ -32,6 +32,11 @@ public class MockedFolder implements Folder {
     }
 
     @Override
+    public ArrayList<File> listFiles(){
+        return fileList;
+    }
+
+    @Override
     public String getFolderName(){
         return this.folderName;
     }

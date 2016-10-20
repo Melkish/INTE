@@ -10,6 +10,7 @@ public class CommandHistoryDoskeyh extends Command {
         @Override
         public void execute (Terminal terminal) {
         printHistory(terminal.getCommandHistory());
+
     }
 
 
