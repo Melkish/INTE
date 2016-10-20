@@ -7,19 +7,16 @@ import java.util.ArrayList;
  */
 public class CommandHistoryDoskeyh extends Command {
 
-    private Terminal terminal;
-
-    public void execute (Terminal terminal) {
-        this.terminal = terminal;
+        @Override
+        public void execute (Terminal terminal) {
         printHistory(terminal.getCommandHistory());
-
     }
 
 
     public void printHistory (ArrayList listToPrint) {
         if (!listToPrint.isEmpty()) {
             for (int i = 0; i < listToPrint.size(); i++) {
-                System.out.println(listToPrint.get(i) + "command> ");
+                System.out.println( "commmand history list "+  (i+1) +" " + listToPrint.get(i));
             }
         }
     }

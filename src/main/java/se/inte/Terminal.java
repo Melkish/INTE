@@ -29,13 +29,15 @@ public class Terminal {
         }
 
     }
+
     public ArrayList<String> getCommandHistory() {
         return commandHistory;
     }
+    /*
     public void clearHistory (){
         commandHistory.clear();
     }
-
+*/
     public Folder setCurrentFolderToHomeFolder(){
         while(currentFolder.getParentFolder()!=null){
             currentFolder = currentFolder.getParentFolder();
