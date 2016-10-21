@@ -8,12 +8,15 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Miran on 2016-10-18.
  */
-public class CommandHistoryDoskeyTest {
+public class CommandHistoryDoskeyhTest {
 
     private ArrayList <String> testCommandHistory;
     private String cmdString1;
+    private String cmdString2;
+
     private MockedFolder homeFolder;
     private Terminal terminal;
+    private Command testCommand;
 
     @Before
     public void before (){
@@ -22,12 +25,19 @@ public class CommandHistoryDoskeyTest {
     }
 
     @Test
-    public void getCommandHistory (){
+    public void getCommandHistoryTest (){
         homeFolder = new MockedFolder("HomeFolder", null);
         cmdString1 = "mkdir HomeFolder";
+        cmdString2 = "doskey /h";
         terminal.setCurrentFolder(homeFolder);
         terminal.setCommandString(cmdString1);
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
+        terminal.setCommandString(cmdString2);
         testCommandHistory.add(cmdString1);
+        testCommandHistory.add(cmdString2);
         Command command = new Command();
         Command subCommand = command.executeCommand(terminal);
         subCommand.execute(terminal);
@@ -36,10 +46,10 @@ public class CommandHistoryDoskeyTest {
 
     }
     @Test
-    public void doskey (){
-        cmdString1 = "doskey";
+    public void cmdDoskeyhTest (){
+        cmdString1 = "doskey /h";
         terminal.setCommandString(cmdString1);
-        Command testCommand = new CommandHistoryDoskey();
+        testCommand = new CommandHistoryDoskeyh();
         Command command = new Command();
         Command subCommand = command.executeCommand(terminal);
         subCommand.execute(terminal);
@@ -48,13 +58,25 @@ public class CommandHistoryDoskeyTest {
     }
 
     @Test
-    public void listIsEmpty (){
-        homeFolder = new MockedFolder("HomeFolder", null);
-        cmdString1 = "mkdir HomeFolder";
-        terminal.setCurrentFolder(homeFolder);
+    public void cmdHistoryTest (){
+        cmdString1 = "history";
         terminal.setCommandString(cmdString1);
-        testCommandHistory.add(cmdString1);
-        testCommandHistory.clear();
+        testCommand = new CommandHistoryDoskeyh();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
+        assertEquals(testCommand.getClass(), terminal.getCurrentCommand().getClass());
+    }
+
+
+/*
+    @Test
+    public void listIsEmptyTest (){
+        homeFolder = new MockedFolder("HomeFolder", null);
+        cmdString2 = "mkdir HomeFolder";
+        terminal.setCurrentFolder(homeFolder);
+        terminal.setCommandString(cmdString2);
         Command command = new Command();
         Command subCommand = command.executeCommand(terminal);
         subCommand.execute(terminal);
@@ -63,5 +85,5 @@ public class CommandHistoryDoskeyTest {
         assertEquals(testCommandHistory, terminal.getCommandHistory());
 
     }
-
+*/
 }

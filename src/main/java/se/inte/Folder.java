@@ -13,4 +13,5 @@ public interface Folder {
     Folder getParentFolder();
     void setFolderName(String newName);
     File createFile(String folderName, boolean hidden, int size);
+    List<File> listFiles();
 }

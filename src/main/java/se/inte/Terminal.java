@@ -35,10 +35,11 @@ public class Terminal {
         return commandHistory;
     }
 
+    /*
     public void clearHistory (){
         commandHistory.clear();
     }
-
+*/
     public Folder setCurrentFolderToHomeFolder(){
         while(currentFolder.getParentFolder()!=null){
             currentFolder = currentFolder.getParentFolder();
