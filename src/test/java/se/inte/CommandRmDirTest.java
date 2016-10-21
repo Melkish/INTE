@@ -29,7 +29,10 @@ public class CommandRmDirTest {
     public void commandRmDirTest(){
         terminal.setCommandString("rmdir subfolder");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         List<Folder> subFolders = homeFolder.listSubFolders();
         assertFalse(subFolders.contains(subFolder));
     }
@@ -37,7 +40,10 @@ public class CommandRmDirTest {
     public void folderNotExistTest(){
         terminal.setCommandString("rmdir nonExistingFolder");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
         assertFalse(((CommandRmdir) command).isFolderRemoved());
     }

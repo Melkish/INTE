@@ -10,7 +10,10 @@ public class CommandUnknownTest {
     public void unknownCommandTest(){
         Terminal terminal = new Terminal();
         terminal.setCommandString("unknown");
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         assertTrue(terminal.getCurrentCommand() instanceof CommandUnknown);
     }
 
@@ -20,7 +23,10 @@ public class CommandUnknownTest {
         Folder homeFolder = new MockedFolder("TopFolder", null);
         terminal.setCurrentFolder(homeFolder);
         terminal.setCommandString("cd");
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         assertFalse(terminal.getCurrentCommand() instanceof CommandUnknown);
     }
 

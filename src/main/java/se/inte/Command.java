@@ -28,6 +28,6 @@ public class Command {
     }
 
     public void execute(Terminal terminal){
-        System.out.println("poop");
+        System.out.println("Need to override in subclass");
     }
 }

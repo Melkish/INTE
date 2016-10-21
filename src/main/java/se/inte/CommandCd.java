@@ -39,25 +39,6 @@ public class CommandCd extends Command{
         return currentFolder;
     }
 
-    public Folder getCurrentFolder(){
-        return currentFolder;
-    }
-
-    public Folder getParentFolder(){
-        currentFolder = currentFolder.getParentFolder();
-        return currentFolder;
-    }
-
-    public Folder getSubFolderByName(String folderToBeFound){
-        for (Folder f : currentFolder.listSubFolders()){
-            if (f.getFolderName().equalsIgnoreCase(folderToBeFound)){
-                return f;
-            }
-        }
-        System.out.println("Error no such file or directory");
-        return null;
-    }
-
     public String getCommandName(){
         return "cd";
     }

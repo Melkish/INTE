@@ -13,7 +13,10 @@ public class CommandExitTest {
     public void commandExitTest(){
         Terminal terminal = new Terminal();
         terminal.setCommandString("exit");
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         assertTrue(terminal.getCurrentCommand() instanceof CommandExit);
     }
 

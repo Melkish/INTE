@@ -28,7 +28,10 @@ public class CommandHistoryDoskeyTest {
         terminal.setCurrentFolder(homeFolder);
         terminal.setCommandString(cmdString1);
         testCommandHistory.add(cmdString1);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         assertEquals(testCommandHistory, terminal.getCommandHistory());
 
     }
@@ -37,7 +40,10 @@ public class CommandHistoryDoskeyTest {
         cmdString1 = "doskey";
         terminal.setCommandString(cmdString1);
         Command testCommand = new CommandHistoryDoskey();
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         assertEquals(testCommand.getClass(), terminal.getCurrentCommand().getClass());
     }
 
@@ -49,7 +55,10 @@ public class CommandHistoryDoskeyTest {
         terminal.setCommandString(cmdString1);
         testCommandHistory.add(cmdString1);
         testCommandHistory.clear();
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         terminal.clearHistory ();
         assertEquals(testCommandHistory, terminal.getCommandHistory());
 

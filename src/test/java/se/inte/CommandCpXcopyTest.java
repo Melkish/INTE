@@ -28,8 +28,11 @@ public class CommandCpXcopyTest {
     public void commandCpCopyDirectoryTest(){
         terminal.setCommandString("cp -r subfolder1 newFolder");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
-        Command command = terminal.getCurrentCommand();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
+        command = terminal.getCurrentCommand();
         newFolder = ((CommandCpXcopy) command).getCopiedFolder();
         assertEquals("newFolder", newFolder.getFolderName());
     }

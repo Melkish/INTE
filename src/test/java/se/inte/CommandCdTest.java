@@ -27,7 +27,10 @@ public class CommandCdTest {
     public void commandCdTest(){
         terminal.setCommandString("cd");
         terminal.setCurrentFolder(subFolder3);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
         assertEquals(homeFolder, testFolder);
     }
@@ -35,7 +38,10 @@ public class CommandCdTest {
     @Test public void commandCdDotDotTest(){
         terminal.setCommandString("cd ..");
         terminal.setCurrentFolder(subFolder3);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
         assertEquals(subFolder2, testFolder);
     }
@@ -43,7 +49,10 @@ public class CommandCdTest {
     @Test public void commandCdDotDotFromHomeTest(){
         terminal.setCommandString("cd ..");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
         assertEquals(homeFolder, testFolder);
     }
@@ -51,7 +60,10 @@ public class CommandCdTest {
     @Test public void commandCdDirNameTest(){
         terminal.setCommandString("cd subfolder2");
         terminal.setCurrentFolder(subFolder1);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
         assertEquals(subFolder2, testFolder);
     }
@@ -59,7 +71,10 @@ public class CommandCdTest {
     @Test public void commandCdWrongDirNameTest(){
         terminal.setCommandString("cd poop");
         terminal.setCurrentFolder(subFolder1);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
         assertEquals(subFolder1, testFolder);
     }

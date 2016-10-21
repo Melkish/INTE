@@ -27,9 +27,11 @@ public class CommandDirLsTest {
     public void commandDirPrintsSubFoldersTest(){
         terminal.setCommandString("dir");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
-        Command command = terminal.getCurrentCommand();
-
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
+        command = terminal.getCurrentCommand();
         ArrayList<Folder> subFolders = ((CommandDirLs) command).getPrintedSubFolderList();
         assertTrue(subFolders.contains(subFolder1) && subFolders.contains(subFolder2) && subFolders.contains(subFolder3));
     }
@@ -38,8 +40,11 @@ public class CommandDirLsTest {
     public void commandLsPrintsSubFoldersTest(){
         terminal.setCommandString("ls");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
-        Command command = terminal.getCurrentCommand();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
+        command = terminal.getCurrentCommand();
         ArrayList<Folder> subFolders = ((CommandDirLs) command).getPrintedSubFolderList();
         assertTrue(subFolders.contains(subFolder1) && subFolders.contains(subFolder2) && subFolders.contains(subFolder3));
     }

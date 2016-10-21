@@ -1,6 +1,7 @@
 package se.inte;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Terminal {
 
@@ -8,30 +9,32 @@ public class Terminal {
     Folder currentFolder;
     Command currentCommand;
     ArrayList<String> commandHistory  = new ArrayList<>();
-
+    Command command;
 
     public Terminal() {
     }
+
     public static void main (String[] args){
         Terminal terminal = new Terminal();
         terminal.theCommandLoop();
     }
 
     public void theCommandLoop() {
-        //while(!(command instanceof CommandExit)) {
-        int i = 1;
-        while(i != 0){
-            i = i - 1;
-            Command command = new Command();
+        while(!(command instanceof CommandExit)) {
+            Scanner scanner = new Scanner(System.in);
+            commandString = scanner.nextLine();
+            scanner.close();
+            command = new Command();
             Command subCommand = command.executeCommand(this);
             subCommand.execute(this);
             currentCommand = subCommand;
         }
-
     }
+
     public ArrayList<String> getCommandHistory() {
         return commandHistory;
     }
+
     public void clearHistory (){
         commandHistory.clear();
     }
@@ -42,7 +45,6 @@ public class Terminal {
         }
         return currentFolder;
     }
-
 
     public void setCommandString(String commandString){
         this.commandString = commandString;
@@ -59,6 +61,10 @@ public class Terminal {
 
     public Terminal getTerminal(){
         return this;
+    }
+
+    public void setCommand(Command command){
+        this.currentCommand = command;
     }
 
     public void setCurrentFolder(Folder folder){

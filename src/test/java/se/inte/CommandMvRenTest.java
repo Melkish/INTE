@@ -26,7 +26,10 @@ public class CommandMvRenTest {
     public void commandMvTest(){
         terminal.setCommandString("mv subFolder newName");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         assertEquals("newName", subFolder.getFolderName());
     }
 
@@ -34,7 +37,10 @@ public class CommandMvRenTest {
     public void commandRenTest(){
         terminal.setCommandString("ren subFolder newName");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         assertEquals("newName", subFolder.getFolderName());
     }
 
@@ -42,7 +48,10 @@ public class CommandMvRenTest {
     public void folderNotExistingTest(){
         terminal.setCommandString("mv notExistingFolder newName");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
         assertFalse(((CommandMvRen) command).isNameChanged());
     }

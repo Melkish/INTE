@@ -23,7 +23,10 @@ public class CommandMkDirTest {
     public void commandMkDirTest(){
         terminal.setCommandString("mkdir subfolder");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
         terminal.setCommandString("exit");
         List<Folder> subFolderList = homeFolder.listSubFolders();
         assertEquals("subfolder", subFolderList.get(0).getFolderName());
