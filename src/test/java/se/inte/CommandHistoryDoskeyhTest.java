@@ -38,8 +38,8 @@ public class CommandHistoryDoskeyhTest {
         terminal.setCommandString(cmdString2);
         testCommandHistory.add(cmdString1);
         testCommandHistory.add(cmdString2);
-        Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        command = new Command();
+        subCommand = command.executeCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         assertEquals(testCommandHistory, terminal.getCommandHistory());

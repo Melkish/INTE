@@ -26,7 +26,7 @@ public class CommandRmdir extends Command {
             }
         }
         if (!folderRemoved) {
-            System.out.print("Folder " + folderToBeRemoved + (" does not exisit."));
+            System.out.println("Folder " + folderToBeRemoved + (" does not exisit."));
         }
     }
 

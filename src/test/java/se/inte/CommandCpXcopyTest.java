@@ -41,8 +41,11 @@ public class CommandCpXcopyTest {
     public void checkFirstFolderName (){
         terminal.setCommandString("cp -r subfolder1 newFolder");
         terminal.setCurrentFolder(homeFolder);
-        terminal.theCommandLoop();
-        Command command = terminal.getCurrentCommand();
+        Command command = new Command();
+        Command subCommand = command.executeCommand(terminal);
+        subCommand.execute(terminal);
+        terminal.setCommand(subCommand);
+        command = terminal.getCurrentCommand();
         assertEquals("subfolder1", ((CommandCpXcopy) command).getOriginalFolderName() );
 
     }

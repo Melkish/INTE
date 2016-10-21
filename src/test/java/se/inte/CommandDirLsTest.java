@@ -67,7 +67,7 @@ public class CommandDirLsTest {
         Command subCommand = command.executeCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
-        Command command = terminal.getCurrentCommand();
+        command = terminal.getCurrentCommand();
         ArrayList<Folder> subFolders = ((CommandDirLs) command).getPrintedSubFolderList();
         ArrayList<File> files = ((CommandDirLs) command).getPrintedFileList();
         assertTrue(files.contains(testFile1) && files.contains(testFile2) && files.contains(testFile3)
@@ -82,7 +82,7 @@ public class CommandDirLsTest {
         Command subCommand = command.executeCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
-        Command command = terminal.getCurrentCommand();
+        command = terminal.getCurrentCommand();
         ArrayList<File> files = ((CommandDirLs) command).getPrintedFileList();
         assertEquals(5, files.get(0).getSize());
 
@@ -96,7 +96,7 @@ public class CommandDirLsTest {
         Command subCommand = command.executeCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
-        Command command = terminal.getCurrentCommand();
+        command = terminal.getCurrentCommand();
         ArrayList<File> files = ((CommandDirLs) command).getPrintedFileList();
         assertFalse(files.contains(testFile1) && files.contains(testFile3));
     }
