@@ -2,9 +2,11 @@ package se.inte;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.nio.file.*;
 
 public class Terminal {
 
+    static Folder homeFolder;
     String commandString;
     Folder currentFolder;
     Command currentCommand;
@@ -16,10 +18,16 @@ public class Terminal {
 
     public static void main (String[] args){
         Terminal terminal = new Terminal();
+        Path homeFolderPath = Paths.get(System.getProperty("user.home"));
+        String folderName = homeFolderPath.toString();
+        homeFolder = new RealFolder(folderName, null);
         terminal.theCommandLoop();
+
+
     }
 
     public void theCommandLoop() {
+        currentFolder = homeFolder;
         while(!(command instanceof CommandExit)) {
             Scanner scanner = new Scanner(System.in);
             commandString = scanner.nextLine();

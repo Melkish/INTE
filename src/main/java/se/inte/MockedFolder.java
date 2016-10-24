@@ -20,11 +20,6 @@ public class MockedFolder implements Folder {
         subFolderList.add(subFolder);
         return subFolder;
     }
-    public Folder copyFolder(String folderName){
-        Folder copyFolder = new MockedFolder(folderName, this);
-        subFolderList.add(copyFolder);
-        return copyFolder;
-    }
 
     @Override
     public ArrayList<Folder> listSubFolders() {

@@ -16,7 +16,6 @@ public class CommandRmDirTest {
     private Terminal terminal;
     private Folder homeFolder;
     private Folder subFolder;
-    private Command command;
 
     @Before
     public void before(){
