@@ -13,5 +13,4 @@ public interface File {
     void setFileName(String newName);
     boolean isHidden();
     int getSize();
-    Path getPath();
 }

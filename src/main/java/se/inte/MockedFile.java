@@ -44,8 +44,4 @@ public class MockedFile implements File {
         return size;
     }
 
-    @Override
-    public Path getPath(){
-        return null;
-    }
 }

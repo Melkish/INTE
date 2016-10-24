@@ -28,8 +28,7 @@ public class RealFolder implements Folder {
 
     @Override
     public List<Folder> listSubFolders() {
-
-
+        //TODO implement functionality
         return subFolderList;
     }
 
@@ -48,10 +47,6 @@ public class RealFolder implements Folder {
         }
         Path funPath = Paths.get(path);
         return funPath;
-    }
-    @Override
-    public Path getPath (){
-        return createPath();
     }
 
     @Override
@@ -76,6 +71,7 @@ public class RealFolder implements Folder {
 
     @Override
     public List<File> listFiles() {
+        //TODO fix functionality
         return fileList;
     }
 }

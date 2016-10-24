@@ -1,5 +1,6 @@
 package se.inte;
 
+import java.nio.file.Path;
 import java.util.*;
 
 public class MockedFolder implements Folder {

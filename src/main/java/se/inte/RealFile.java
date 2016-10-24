@@ -1,7 +1,9 @@
 package se.inte;
 
+import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import static java.lang.Math.toIntExact;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -42,10 +44,6 @@ public class RealFile implements File {
             return funPath;
 
     }
-    @Override
-    public Path getPath (){
-        return createPath ();
-    }
 
     @Override
     public String getFileName() {
@@ -59,16 +57,29 @@ public class RealFile implements File {
 
     @Override
     public void setFileName(String newName) {
-
+        this.fileName = newName;
     }
 
     @Override
     public boolean isHidden() {
-        return false;
+        Path path = createPath();
+        try{
+            hidden = Files.isHidden(path);
+        } catch (IOException e) {
+            System.out.println("Error");
+        }
+        return hidden;
     }
 
     @Override
     public int getSize() {
-        return 0;
+        Path path = createPath();
+        try{
+            Long sizeAsLong = Files.size(path);
+            size = toIntExact(sizeAsLong);
+        } catch (IOException e){
+            System.out.println("Error");
+        }
+        return size;
     }
 }
