@@ -1,6 +1,7 @@
 package se.inte;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.nio.file.*;
 
@@ -13,6 +14,7 @@ public class RealFolder implements Folder {
     private ArrayList<Folder> subFolderList = new ArrayList<>();
     private Folder parentFolder;
     private ArrayList<File> fileList = new ArrayList<>();
+    private ArrayList<Folder> folderPath = new ArrayList<>();
 
     public RealFolder(String folderName, Folder parentFolder) {
         this.folderName = folderName;
@@ -27,22 +29,40 @@ public class RealFolder implements Folder {
     @Override
     public List<Folder> listSubFolders() {
 
-        return null;
+
+        return subFolderList;
+    }
+
+    private Path createPath(){
+        Folder currentFolder = this;
+        String path;
+        while (currentFolder.getParentFolder() != null){
+            folderPath.add(currentFolder);
+            currentFolder = currentFolder.getParentFolder();
+        }
+        folderPath.add(currentFolder);
+        Collections.reverse(folderPath);
+        path = "";
+        for (Folder f : folderPath) {
+            path = path + "/" + f.getFolderName();
+        }
+        Path funPath = Paths.get(path);
+        return funPath;
     }
 
     @Override
     public String getFolderName() {
-        return null;
+        return folderName;
     }
 
     @Override
     public Folder getParentFolder() {
-        return null;
+        return parentFolder;
     }
 
     @Override
     public void setFolderName(String newName) {
-
+        this.folderName = newName;
     }
 
     @Override
@@ -52,6 +72,6 @@ public class RealFolder implements Folder {
 
     @Override
     public List<File> listFiles() {
-        return null;
+        return fileList;
     }
 }

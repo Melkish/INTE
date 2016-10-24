@@ -16,8 +16,9 @@ public class CommandHistoryDoskeyh extends Command {
 
     public void printHistory (ArrayList listToPrint) {
         if (!listToPrint.isEmpty()) {
+            System.out.println("commmand history list ");
             for (int i = 0; i < listToPrint.size(); i++) {
-                System.out.println( "commmand history list "+  (i+1) +" " + listToPrint.get(i));
+                System.out.println((i+1) +" " + listToPrint.get(i));
             }
         }
     }

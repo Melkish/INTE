@@ -1,5 +1,7 @@
 package se.inte;
 
+import java.nio.file.Path;
+
 /**
  * Created by Melke on 19/10/16.
  */
@@ -40,5 +42,10 @@ public class MockedFile implements File {
     @Override
     public int getSize() {
         return size;
+    }
+
+    @Override
+    public Path getPath(){
+        return null;
     }
 }

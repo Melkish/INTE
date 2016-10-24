@@ -1,8 +1,11 @@
 package se.inte;
 
+import java.util.Scanner;
+
 public class Command {
+
+
     public Command executeCommand(Terminal terminal) {
-        System.out.println("Command> ");
         String commandString = terminal.getCommandString();
 
         if (commandString.startsWith("cd")) {
@@ -25,6 +28,14 @@ public class Command {
             return new CommandMvRen();
         } else
             return new CommandUnknown();
+    }
+
+    public static String getCommandString(){
+        System.out.print("Command> ");
+        Scanner scanner = new Scanner(System.in);
+        String commandString = scanner.nextLine();
+        System.out.println("");
+        return commandString;
     }
 
     public void execute(Terminal terminal){

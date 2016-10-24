@@ -1,5 +1,6 @@
 package se.inte;
 
+import java.nio.file.*;
 import java.util.List;
 
 /**
@@ -12,4 +13,5 @@ public interface File {
     void setFileName(String newName);
     boolean isHidden();
     int getSize();
+    Path getPath();
 }
