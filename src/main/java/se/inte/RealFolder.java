@@ -49,6 +49,10 @@ public class RealFolder implements Folder {
         Path funPath = Paths.get(path);
         return funPath;
     }
+    @Override
+    public Path getPath (){
+        return createPath();
+    }
 
     @Override
     public String getFolderName() {
