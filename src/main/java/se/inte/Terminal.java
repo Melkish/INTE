@@ -50,6 +50,10 @@ public class Terminal {
         return commandHistory;
     }
 
+    public void saveCommandToHistory(String commandString){
+        commandHistory.add(commandString);
+    }
+
     public Folder setCurrentFolderToHomeFolder(){
         while(currentFolder.getParentFolder()!=null){
             currentFolder = currentFolder.getParentFolder();
