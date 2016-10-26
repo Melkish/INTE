@@ -5,15 +5,12 @@ import java.nio.file.*;
 
 public class Terminal {
 
-    static Folder homeFolder;
-    String commandString;
-    Folder currentFolder;
-    Command currentCommand;
-    ArrayList<String> commandHistory  = new ArrayList<>();
-    Command command;
-
-    public Terminal() {
-    }
+    private static Folder homeFolder;
+    private String commandString;
+    private Folder currentFolder;
+    private Command currentCommand;
+    private ArrayList<String> commandHistory  = new ArrayList<>();
+    private Command command;
 
     public static void main (String[] args){
         Terminal terminal = new Terminal();
@@ -28,12 +25,22 @@ public class Terminal {
         currentFolder = homeFolder;
         while(!(command instanceof CommandExit)) {
             command = new Command();
-            commandString = Command.getCommandString();
+            commandString = Command.getCommandString(getLocation());
             commandHistory.add(commandString);
-            Command subCommand = command.executeCommand(this);
+            Command subCommand = command.checkCommand(this);
             subCommand.execute(this);
             currentCommand = subCommand;
         }
+    }
+
+    private String getLocation(){
+        String location;
+        if (homeFolder.equals(currentFolder)){
+            location = homeFolder.getFolderName() + " ";
+        } else {
+            location = currentFolder.getFolderName() + " " + homeFolder.getFolderName() + " ";
+        }
+        return location;
     }
 
     public ArrayList<String> getCommandHistory() {

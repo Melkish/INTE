@@ -34,7 +34,7 @@ public class CommandDirLsTest {
         terminal.setCommandString("dir");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
@@ -49,7 +49,7 @@ public class CommandDirLsTest {
         terminal.setCommandString("ls");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
@@ -64,7 +64,7 @@ public class CommandDirLsTest {
         terminal.setCommandString("ls -a");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
@@ -79,7 +79,7 @@ public class CommandDirLsTest {
         terminal.setCommandString("ls -l");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
@@ -93,7 +93,7 @@ public class CommandDirLsTest {
         terminal.setCommandString("ls");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();

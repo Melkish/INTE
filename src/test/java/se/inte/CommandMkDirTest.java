@@ -24,7 +24,7 @@ public class CommandMkDirTest {
         terminal.setCommandString("mkdir subfolder");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         terminal.setCommandString("exit");

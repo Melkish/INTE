@@ -25,7 +25,7 @@ public class CommandTest {
     @Test
     public void executeCommandTest(){
         terminal.setCommandString("cd");
-        Command executedCommand = command.executeCommand(terminal);
+        Command executedCommand = command.checkCommand(terminal);
         if (executedCommand instanceof CommandCd){
             commandString = ((CommandCd) executedCommand).getCommandName();
         }

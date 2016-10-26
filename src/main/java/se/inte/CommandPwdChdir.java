@@ -7,7 +7,7 @@ import java.util.Collections;
  * Created by Emma on 2016-10-17.
  */
 
-public class CommandPwdChdir extends Command {
+public class CommandPwdChDir extends Command {
 
     private Folder currentFolder;
     private ArrayList<Folder> folderPath = new ArrayList<>();
@@ -15,7 +15,7 @@ public class CommandPwdChdir extends Command {
 
     @Override
     public void execute(Terminal terminal){
-        this.currentFolder = terminal.currentFolder;
+        this.currentFolder = terminal.getCurrentFolder();
 
         while (currentFolder.getParentFolder() != null){
             folderPath.add(currentFolder);
