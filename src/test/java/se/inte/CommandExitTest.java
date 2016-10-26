@@ -14,7 +14,7 @@ public class CommandExitTest {
         Terminal terminal = new Terminal();
         terminal.setCommandString("exit");
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         assertTrue(terminal.getCurrentCommand() instanceof CommandExit);

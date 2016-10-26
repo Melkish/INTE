@@ -28,7 +28,7 @@ public class CommandCdTest {
         terminal.setCommandString("cd");
         terminal.setCurrentFolder(subFolder3);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
@@ -39,7 +39,7 @@ public class CommandCdTest {
         terminal.setCommandString("cd ..");
         terminal.setCurrentFolder(subFolder3);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
@@ -50,7 +50,7 @@ public class CommandCdTest {
         terminal.setCommandString("cd ..");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
@@ -61,7 +61,7 @@ public class CommandCdTest {
         terminal.setCommandString("cd subfolder2");
         terminal.setCurrentFolder(subFolder1);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();
@@ -72,7 +72,7 @@ public class CommandCdTest {
         terminal.setCommandString("cd poop");
         terminal.setCurrentFolder(subFolder1);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         Folder testFolder = terminal.getCurrentFolder();

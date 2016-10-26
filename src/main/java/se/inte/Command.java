@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Command {
 
 
-    public Command executeCommand(Terminal terminal) {
+    public Command checkCommand(Terminal terminal) {
         String commandString = terminal.getCommandString();
 
         if (commandString.startsWith("cd")) {
@@ -21,17 +21,17 @@ public class Command {
         } else if (commandString.startsWith("cp -r") || commandString.startsWith("xcopy")){
             return new CommandCpXcopy();
         } else if (commandString.startsWith("rmdir")){
-            return new CommandRmdir();
+            return new CommandRmDir();
         } else if (commandString.startsWith("doskey /h") || commandString.startsWith("history")){
-            return new CommandHistoryDoskeyh();
+            return new CommandHistoryDosKeyH();
         } else if (commandString.startsWith("mv") || commandString.startsWith("ren")) {
             return new CommandMvRen();
         } else
             return new CommandUnknown();
     }
 
-    public static String getCommandString(){
-        System.out.print("Command> ");
+    public static String getCommandString(String location){
+        System.out.print(location);
         Scanner scanner = new Scanner(System.in);
         String commandString = scanner.nextLine();
         System.out.println("");

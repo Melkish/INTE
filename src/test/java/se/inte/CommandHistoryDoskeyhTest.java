@@ -32,14 +32,14 @@ public class CommandHistoryDoskeyhTest {
         terminal.setCurrentFolder(homeFolder);
         terminal.setCommandString(cmdString1);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         terminal.setCommandString(cmdString2);
         testCommandHistory.add(cmdString1);
         testCommandHistory.add(cmdString2);
         command = new Command();
-        subCommand = command.executeCommand(terminal);
+        subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         assertEquals(testCommandHistory, terminal.getCommandHistory());
@@ -49,9 +49,9 @@ public class CommandHistoryDoskeyhTest {
     public void cmdDoskeyhTest (){
         cmdString1 = "doskey /h";
         terminal.setCommandString(cmdString1);
-        testCommand = new CommandHistoryDoskeyh();
+        testCommand = new CommandHistoryDosKeyH();
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         assertEquals(testCommand.getClass(), terminal.getCurrentCommand().getClass());
@@ -61,9 +61,9 @@ public class CommandHistoryDoskeyhTest {
     public void cmdHistoryTest (){
         cmdString1 = "history";
         terminal.setCommandString(cmdString1);
-        testCommand = new CommandHistoryDoskeyh();
+        testCommand = new CommandHistoryDosKeyH();
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         assertEquals(testCommand.getClass(), terminal.getCurrentCommand().getClass());

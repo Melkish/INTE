@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Olivia on 2016-10-18.
  */
-public class CommandRmdir extends Command {
+public class CommandRmDir extends Command {
 
     private boolean folderRemoved;
 

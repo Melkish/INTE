@@ -11,7 +11,7 @@ public class CommandUnknownTest {
         Terminal terminal = new Terminal();
         terminal.setCommandString("unknown");
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         assertTrue(terminal.getCurrentCommand() instanceof CommandUnknown);
@@ -24,7 +24,7 @@ public class CommandUnknownTest {
         terminal.setCurrentFolder(homeFolder);
         terminal.setCommandString("cd");
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         assertFalse(terminal.getCurrentCommand() instanceof CommandUnknown);

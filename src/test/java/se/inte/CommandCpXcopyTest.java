@@ -29,7 +29,7 @@ public class CommandCpXcopyTest {
         terminal.setCommandString("cp -r subfolder1 newFolder");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
@@ -42,7 +42,7 @@ public class CommandCpXcopyTest {
         terminal.setCommandString("cp -r subfolder1 newFolder");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();

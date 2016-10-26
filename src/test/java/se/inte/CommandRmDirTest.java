@@ -3,7 +3,6 @@ package se.inte;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertFalse;
@@ -29,7 +28,7 @@ public class CommandRmDirTest {
         terminal.setCommandString("rmdir subfolder");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         List<Folder> subFolders = homeFolder.listSubFolders();
@@ -40,10 +39,10 @@ public class CommandRmDirTest {
         terminal.setCommandString("rmdir nonExistingFolder");
         terminal.setCurrentFolder(homeFolder);
         Command command = new Command();
-        Command subCommand = command.executeCommand(terminal);
+        Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
-        assertFalse(((CommandRmdir) command).isFolderRemoved());
+        assertFalse(((CommandRmDir) command).isFolderRemoved());
     }
 }
