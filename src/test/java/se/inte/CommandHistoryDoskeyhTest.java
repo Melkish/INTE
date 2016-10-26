@@ -31,11 +31,13 @@ public class CommandHistoryDosKeyHTest {
         cmdString2 = "doskey /h";
         terminal.setCurrentFolder(homeFolder);
         terminal.setCommandString(cmdString1);
+        terminal.saveCommandToHistory(cmdString1);
         Command command = new Command();
         Command subCommand = command.checkCommand(terminal);
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         terminal.setCommandString(cmdString2);
+        terminal.saveCommandToHistory(cmdString2);
         testCommandHistory.add(cmdString1);
         testCommandHistory.add(cmdString2);
         command = new Command();
