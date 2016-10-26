@@ -15,7 +15,7 @@ public class Command {
         } else if (commandString.startsWith("mkdir")){
             return new CommandMkDir();
         } else if(commandString.startsWith("chdir") || commandString.startsWith("pwd")){
-            return new CommandPwdChdir();
+            return new CommandPwdChDir();
         } else if (commandString.equalsIgnoreCase("exit")){
             return new CommandExit();
         } else if (commandString.startsWith("cp -r") || commandString.startsWith("xcopy")){

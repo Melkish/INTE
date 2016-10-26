@@ -33,7 +33,7 @@ public class CommandPwdChdirTest {
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
-        String correctPath = ((CommandPwdChdir) command).getPath();
+        String correctPath = ((CommandPwdChDir) command).getPath();
         String path = "\\homeFolder\\subFolder1\\subFolder2";
         assertEquals(path, correctPath);
     }
@@ -47,7 +47,7 @@ public class CommandPwdChdirTest {
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
-        String correctPath = ((CommandPwdChdir) command).getPath();
+        String correctPath = ((CommandPwdChDir) command).getPath();
         String path = "/homeFolder/subFolder1";
         assertEquals(path, correctPath);
     }
@@ -61,7 +61,7 @@ public class CommandPwdChdirTest {
         subCommand.execute(terminal);
         terminal.setCommand(subCommand);
         command = terminal.getCurrentCommand();
-        String correctPath = ((CommandPwdChdir) command).getPath();
+        String correctPath = ((CommandPwdChDir) command).getPath();
         String path = "/homeFolder";
         assertEquals(path, correctPath);
     }

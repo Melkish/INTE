@@ -7,7 +7,7 @@ import java.util.Collections;
  * Created by Emma on 2016-10-17.
  */
 
-public class CommandPwdChdir extends Command {
+public class CommandPwdChDir extends Command {
 
     private Folder currentFolder;
     private ArrayList<Folder> folderPath = new ArrayList<>();
