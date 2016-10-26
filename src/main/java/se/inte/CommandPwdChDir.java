@@ -15,7 +15,7 @@ public class CommandPwdChDir extends Command {
 
     @Override
     public void execute(Terminal terminal){
-        this.currentFolder = terminal.getCurrentFolder();
+        this.currentFolder = terminal.currentFolder;
 
         while (currentFolder.getParentFolder() != null){
             folderPath.add(currentFolder);

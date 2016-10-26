@@ -19,7 +19,7 @@ public class CommandCpXcopy extends Command {
         this.commandString = terminal.getCommandString();
 
         String restOfCommand = commandString.substring(6);
-        String[] folderName = restOfCommand.split(" ", 1);
+        String[] folderName = restOfCommand.split(" ");
         folderToBeCopiedString = folderName[0];
         newFolderString = folderName[1];
 

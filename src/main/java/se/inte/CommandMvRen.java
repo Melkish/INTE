@@ -27,7 +27,7 @@ public class CommandMvRen extends Command {
             }
         }
         if(!nameChanged){
-            System.out.println("No folder with the name " + oldName);
+            System.out.println("No folder with name " + oldName);
         }
     }
 

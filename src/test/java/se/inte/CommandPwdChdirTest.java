@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 /**
  * Created by Emma on 2016-10-17.
  */
-public class CommandPwdChdirTest {
+public class CommandPwdChDirTest {
 
     private Terminal terminal;
     private Folder homeFolder;
@@ -25,7 +25,7 @@ public class CommandPwdChdirTest {
 
 
     @Test
-    public void ChdirTest(){
+    public void ChDirTest(){
         terminal.setCommandString("chdir");
         terminal.setCurrentFolder(subFolder2);
         Command command = new Command();

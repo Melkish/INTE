@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Miran on 2016-10-18.
  */
-public class CommandHistoryDoskeyhTest {
+public class CommandHistoryDosKeyHTest {
 
     private ArrayList <String> testCommandHistory;
     private String cmdString1;

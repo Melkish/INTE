@@ -49,6 +49,5 @@ public class CommandCpXcopyTest {
         assertEquals("subfolder1", ((CommandCpXcopy) command).getOriginalFolderName() );
 
     }
-    //TODO create test to check if the first folders name is also changed
 
 }

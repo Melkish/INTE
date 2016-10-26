@@ -5,12 +5,15 @@ import java.nio.file.*;
 
 public class Terminal {
 
-    private static Folder homeFolder;
-    private String commandString;
-    private Folder currentFolder;
-    private Command currentCommand;
-    private ArrayList<String> commandHistory  = new ArrayList<>();
-    private Command command;
+    static Folder homeFolder;
+    String commandString;
+    Folder currentFolder;
+    Command currentCommand;
+    ArrayList<String> commandHistory  = new ArrayList<>();
+    Command command;
+
+    public Terminal() {
+    }
 
     public static void main (String[] args){
         Terminal terminal = new Terminal();
